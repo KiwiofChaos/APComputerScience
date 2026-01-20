@@ -7,20 +7,23 @@ public class TrianglePuckett {
         
         int[] sides = getTriangleSides(keyboard);
         Arrays.sort(sides);
-
-        if (sides[2] > (sides[1] + sides[0])) {
+        
+        System.out.println("" + sides[0] + ", " + sides[1] + ", " + sides[2]);
+        if (sides[2] < (sides[1] + sides[0])) {
+            System.out.println("That is a triangle!!!");
+            if (Math.pow(sides[0], 2.0) + Math.pow(sides[1], 2.0) == Math.pow(sides[2], 2.0)) 
+            {
+                System.out.println("That is a right triangle!!!");
+            }
+            else {
+                System.out.println("That is not a right triangle!!!");
+            }
+        }
+        else {
             System.out.println("That is not a triangle!!!");
         }
-        else {
-            System.out.println("That is a triangle!!!");
-        }
 
-        if (Math.pow(sides[0], 2.0) + Math.pow(sides[1], 2.0) == Math.pow(sides[2], 2.0)) {
-            System.out.println("That is a right triangle!!!");
-        }
-        else {
-            System.out.println("That is not a right triangle!!!");
-        }
+        
     }
     public static int[] getTriangleSides(Scanner keyboard) {
         int[] sides = new int[3];
@@ -31,5 +34,9 @@ public class TrianglePuckett {
         }
 
         return sides;
+    }
+    public static int[] sortArray(int[] someArray) {
+        int highest = 0;
+        for (int index)
     }
 }
