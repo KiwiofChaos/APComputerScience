@@ -5,8 +5,19 @@ public class TrianglePuckett {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
         
-        int[] sides = getTriangleSides(keyboard);
-        Arrays.sort(sides);
+        int[] sides = new int[3];
+        int highestIndex = 0;
+
+        for (int side = 0; side < 3; side++) {
+            System.out.println("Enter side " + (side + 1) + " of the triagle: ");
+            sides[side] = keyboard.nextInt();
+            if (sides[highestIndex] < sides[side]) {
+                highestIndex = side;
+            }
+        }
+        int temp = sides[2];
+        sides[2] = sides[highestIndex];
+        sides[highestIndex] = temp;
         
         System.out.println("" + sides[0] + ", " + sides[1] + ", " + sides[2]);
         if (sides[2] < (sides[1] + sides[0])) {
@@ -24,19 +35,5 @@ public class TrianglePuckett {
         }
 
         
-    }
-    public static int[] getTriangleSides(Scanner keyboard) {
-        int[] sides = new int[3];
-
-        for (int side = 0; side < 3; side++) {
-            System.out.println("Enter side " + (side + 1) + " of the triagle: ");
-            sides[side] = keyboard.nextInt();
-        }
-
-        return sides;
-    }
-    public static int[] sortArray(int[] someArray) {
-        int highest = 0;
-        for (int index)
     }
 }
